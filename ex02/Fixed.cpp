@@ -4,35 +4,29 @@ const int Fixed::fractBits = 8;
 
 Fixed::Fixed() : value(0)
 {
-    // std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int intValue)
 {
-    // std::cout << "Int constructor called" << std::endl;
     value = intValue << fractBits;
 }
 
 Fixed::Fixed(const float floatValue)
 {
-    // std::cout << "Float constructor called" << std::endl;
     value = (int)roundf(floatValue * (1 << fractBits));
 }
 
 Fixed::Fixed(const Fixed &other)
 {
-    // std::cout << "Copy constructor called" << std::endl;
     *this = other;
 }
 
 Fixed::~Fixed()
 {
-    // std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-    // std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
         value = other.value;
     return *this;
